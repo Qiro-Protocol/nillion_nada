@@ -1,0 +1,42 @@
+---
+program: nada_qiro_scoring_model
+parties:
+  - name: User
+inputs:
+  ebitda_revenue:
+    party: User
+    value: 0.1
+  net_interest_income:
+    party: User
+    value: 0.15
+  roe:
+    party: User
+    value: 0.08
+  roa:
+    party: User
+    value: 0.05
+  cap_leverage:
+    party: User
+    value: 3.0
+  liquidity_ratio:
+    party: User
+    value: 1.0
+  profit_margin:
+    party: User
+    value: 10.0
+  debt_equity:
+    party: User
+    value: 2.5
+  current_ratio:
+    party: User
+    value: 5.0
+  asset_turnover:
+    party: User
+    value: 1.0
+  interest_coverage:
+    party: User
+    value: 5.0
+expected_outputs:
+  credit_score:
+    party: User
+    value: 3.42

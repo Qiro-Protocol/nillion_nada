@@ -1,0 +1,16 @@
+---
+program: qiro_nada
+inputs:
+  asset_turnover: 3
+  cap_leverage: 3
+  current_ratio: 3
+  debt_equity: 3
+  ebitda_revenue: 3
+  interest_coverage: 3
+  liquidity_ratio: 3
+  net_interest_income: 3
+  profit_margin: 3
+  roa: 3
+  roe: 3
+expected_outputs:
+  credit_score: 12949
