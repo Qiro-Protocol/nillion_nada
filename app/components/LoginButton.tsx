@@ -1,7 +1,6 @@
 import { FC, useState } from "react";
 import { createClient } from "@nillion/client-react-hooks";
 import type { VmClient } from "@nillion/client-vms";
-import { AddTestnetChain } from "./AddTestnetChain";
 import { Button } from "./ui/button";
 
 interface LoginButtonProps {
@@ -77,16 +76,16 @@ export const LoginButton: FC<LoginButtonProps> = ({
 
   return (
     <div className="flex flex-row items-center gap-2">
-      {/* {isTestnet(NETWORK) && <AddTestnetChain />} */}
       <Button
+        variant={"outline"}
         onClick={isConnected ? handleDisconnect : handleLogin}
         disabled={isLoading}
-        className={`px-4 py-3 font-semibold text-sm rounded-lg shadow-sm hover:bg-blue-600 transition-colors ${isConnected ? "bg-blue-500 text-white" : "bg-blue-500 text-white"}`}
+        className={`rounded-xl h-10 w-40 bg-white text-black`}
       >
         {isLoading ? (
           <span className="flex items-center gap-2">
             <svg
-              className="animate-spin h-5 w-5 text-white"
+              className="animate-spin h-5 w-5 text-black"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"

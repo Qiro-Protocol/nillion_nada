@@ -6,6 +6,7 @@ import { useGlobalStats } from "../hooks/use-global-stats";
 import { cn } from "../lib/utils";
 import { motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
+import { GlobalStatCard } from "./global-stats-card";
 
 export function GlobalStats() {
   const searchParams = useSearchParams();
@@ -25,10 +26,12 @@ export function GlobalStats() {
             variants={fadeInUp}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex flex-col gap-y-2">
-              <p className="text-sm text-muted-foreground">{item.label}</p>
-              <p className="text-2xl font-bold">{item?.value}</p>
-            </div>
+            <GlobalStatCard
+              className="bg-gradient-to-br from-accent to-primary/20"
+              currency=""
+              label={item.label}
+              value={item?.value}
+            />
           </motion.div>
         );
       })}

@@ -8,6 +8,8 @@ import {
   CardContent,
 } from "../components/ui/card";
 import { GlobalStats } from "../components/AppStats";
+import { NFTTable } from "../components/nft-table";
+import { NFTListing } from "../components/nft-listing";
 
 const NILLION_CONFIG = {
   title: "NFTs",
@@ -23,7 +25,9 @@ export default function Qiro() {
           <CardTitle>{NILLION_CONFIG.title}</CardTitle>
           <CardDescription>{NILLION_CONFIG.description}</CardDescription>
         </CardHeader>
-        <CardContent></CardContent>
+        <CardContent>
+          <NFTListing />
+        </CardContent>
       </Card>
     </main>
   );
