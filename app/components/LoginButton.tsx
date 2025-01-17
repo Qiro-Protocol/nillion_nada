@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import { createClient } from "@nillion/client-react-hooks";
 import type { VmClient } from "@nillion/client-vms";
 import { AddTestnetChain } from "./AddTestnetChain";
+import { Button } from "./ui/button";
 
 interface LoginButtonProps {
   onClientCreated: (client: VmClient) => void;
@@ -50,6 +51,7 @@ export const LoginButton: FC<LoginButtonProps> = ({
         if (!keplr) {
           throw new Error("Keplr not found");
         }
+        //@ts-expect-error window keplr types
         const offlineSigner = keplr.getOfflineSigner(chainId);
         const accounts = await offlineSigner.getAccounts();
 
@@ -75,8 +77,8 @@ export const LoginButton: FC<LoginButtonProps> = ({
 
   return (
     <div className="flex flex-row items-center gap-2">
-      {isTestnet(NETWORK) && <AddTestnetChain />}
-      <button
+      {/* {isTestnet(NETWORK) && <AddTestnetChain />} */}
+      <Button
         onClick={isConnected ? handleDisconnect : handleLogin}
         disabled={isLoading}
         className={`px-4 py-3 font-semibold text-sm rounded-lg shadow-sm hover:bg-blue-600 transition-colors ${isConnected ? "bg-blue-500 text-white" : "bg-blue-500 text-white"}`}
@@ -114,7 +116,7 @@ export const LoginButton: FC<LoginButtonProps> = ({
         ) : (
           "Login"
         )}
-      </button>
+      </Button>
       {error && <p className="text-red-500 text-sm">{error}</p>}
     </div>
   );

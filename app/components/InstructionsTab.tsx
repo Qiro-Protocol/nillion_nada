@@ -1,31 +1,29 @@
 "use client";
 
 import { useState, type FC } from "react";
-import { TestNetContent } from './TestNetContent';
-import { WelcomeContent } from './WelcomeContent';
 
 export const InstructionsTab: FC = () => {
-  const [activeTab, setActiveTab] = useState('devnet');
+  const [activeTab, setActiveTab] = useState("devnet");
 
   return (
     <div className="min-w-4xl mx-auto p-6">
       <div className="flex space-x-1 border-b border-gray-200 mb-6">
         <button
-          onClick={() => setActiveTab('devnet')}
+          onClick={() => setActiveTab("devnet")}
           className={`px-4 py-2 text-sm font-medium rounded-t-lg ${
-            activeTab === 'devnet'
-              ? 'bg-gray-500 text-white'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            activeTab === "devnet"
+              ? "bg-gray-500 text-white"
+              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
           }`}
         >
           Devnet
         </button>
         <button
-          onClick={() => setActiveTab('testnet')}
+          onClick={() => setActiveTab("testnet")}
           className={`px-4 py-2 text-sm font-medium rounded-t-lg ${
-            activeTab === 'testnet'
-              ? 'bg-gray-500 text-white'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            activeTab === "testnet"
+              ? "bg-gray-500 text-white"
+              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
           }`}
         >
           Testnet
@@ -33,15 +31,21 @@ export const InstructionsTab: FC = () => {
       </div>
 
       <div className="mt-4 ">
-        {activeTab === 'devnet' ? (
+        {activeTab === "devnet" ? (
           <div className="space-y-6">
-            <h2 className={`text-2xl font-bold dark:text-white text-gray-800 mb-4`}>Devnet Instructions</h2>
-            <WelcomeContent />
+            <h2
+              className={`text-2xl font-bold dark:text-white text-gray-800 mb-4`}
+            >
+              Devnet Instructions
+            </h2>
           </div>
         ) : (
           <div className="space-y-6">
-            <h2 className={`text-2xl font-bold dark:text-white text-gray-800 mb-4`}>Testnet Instructions</h2>
-            <TestNetContent />
+            <h2
+              className={`text-2xl font-bold dark:text-white text-gray-800 mb-4`}
+            >
+              Testnet Instructions
+            </h2>
           </div>
         )}
       </div>
