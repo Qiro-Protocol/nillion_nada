@@ -1,12 +1,10 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "./ui/button";
-import { motion } from "framer-motion";
 import { LoginButton } from "./LoginButton";
 import { useState } from "react";
 import type { VmClient } from "@nillion/client-vms";
 import { LogoWithQiroFinanceBlack } from "./logo-with-qiro-finance";
+import { WalletModal } from "./connect-wallet/aptos-connet-wallet";
 
 export function Header() {
   const [client, setClient] = useState<VmClient | undefined>();
@@ -24,6 +22,7 @@ export function Header() {
             onClientCreated={handleClientCreated}
             isConnected={!!client}
           />
+          <WalletModal />
         </>
       </div>
     </nav>

@@ -8,7 +8,6 @@ import {
   CardContent,
 } from "../components/ui/card";
 import { GlobalStats } from "../components/AppStats";
-import { NFTTable } from "../components/nft-table";
 import { NFTListing } from "../components/nft-listing";
 
 const NILLION_CONFIG = {
